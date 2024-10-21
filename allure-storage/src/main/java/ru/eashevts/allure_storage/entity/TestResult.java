@@ -42,11 +42,12 @@ public class TestResult {
     @JoinColumn(name = "test_result_id")
     private List<Step> steps;
 
-    @ManyToOne(fetch = FetchType.EAGER)
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "build_run_id" )
     private BuildRun buildRun;
 
-    @ManyToOne( fetch = FetchType.EAGER)
+
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "test_id")
     private TestCase testCase;
 

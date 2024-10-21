@@ -3,12 +3,16 @@ package ru.eashevts.allure_storage.entity;
 
 import jakarta.persistence.*;
 import lombok.Data;
+import lombok.NoArgsConstructor;
+import org.hibernate.annotations.CreationTimestamp;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 @Entity
 @Data
+@NoArgsConstructor
 @Table(name = "build_runs")
 public class BuildRun {
     @Id
@@ -24,6 +28,12 @@ public class BuildRun {
     private String branch;
 
     private String parameters;
+
+    @CreationTimestamp
+    @Temporal(TemporalType.TIMESTAMP)
+    @Column(name = "create_date")
+    private Date createDate;
+
 
     @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
     @JoinColumn(name = "build_run_id")

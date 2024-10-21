@@ -1,7 +1,9 @@
 package ru.eashevts.allure_storage.repository;
 
-import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.repository.CrudRepository;
+import org.springframework.data.repository.PagingAndSortingRepository;
 import ru.eashevts.allure_storage.entity.BuildRun;
 
-public interface BuildRunRepository extends JpaRepository<BuildRun, Long> {
+public interface BuildRunRepository extends PagingAndSortingRepository<BuildRun, Long>, CrudRepository<BuildRun, Long> {
+
 }
