@@ -17,7 +17,7 @@
                 <th scope="col">Name</th>
                 <th scope="col">Full name</th>
                 <th scope="col">Status</th>
-<!--                <th scope="col">Testcase</th>-->
+                <!--                <th scope="col">Testcase</th>-->
 
             </tr>
             </thead>
@@ -30,11 +30,15 @@
 
                 <td th:text="${item.fullName}"/>
 
-                <td th:text="${item.status}"/>
+                <td>
+                    <p th:style="${item.status == 'passed' ? 'color: green;' : (item.status != 'passed' ? 'color: red;' : 'color: orange;')}">
+                         <span th:text="${item.status}"></span>
+                    </p>
+                </td>
 
-<!--                <td>-->
-<!--                    <a class="link" th:href="@{/testcases/{id}(id=${item.test_id})}" th:text="${item.test_id}"></a>-->
-<!--                </td>-->
+                <!--                <td>-->
+                <!--                    <a class="link" th:href="@{/testcases/{id}(id=${item.test_id})}" th:text="${item.test_id}"></a>-->
+                <!--                </td>-->
             </tr>
             </tbody>
 

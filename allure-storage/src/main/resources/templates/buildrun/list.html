@@ -15,8 +15,11 @@
             <tr>
                 <th scope="col">#</th>
                 <th scope="col">Name</th>
-                <th scope="col">Link of build</th>
+                <th scope="col">Stand</th>
+                <th scope="col">Branch</th>
+                <th scope="col">Parameters</th>
                 <th scope="col">Create date</th>
+                <th scope="col">Link of build</th>
             </tr>
             </thead>
             <tbody>
@@ -25,6 +28,12 @@
                     <a class="link" th:href="@{/buildruns/{id}(id=${item.id})}" th:text="${item.id}"></a>
                 </td>
                 <td th:text="${item.name}"/>
+
+                <td th:text="${item.stand}"/>
+
+                <td th:text="${item.branch}"/>
+
+                <td th:text="${item.parameters}"/>
 
                 <td>
                     <a th:text="${item.createDate}"></a>

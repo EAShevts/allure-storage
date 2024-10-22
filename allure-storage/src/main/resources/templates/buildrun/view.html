@@ -9,6 +9,8 @@
 </head>
 <body>
 <main class="my-5">
+    <p class="text-center"   th:text="${buildRun.name} + ' ' + ${buildRun.stand}  + ' ' + ${buildRun.branch}  + ' ' +  ${buildRun.parameters}"></p>
+    <a class="text-center link-opacity-10-hover" th:href="${buildRun.buildUrl}">[Link]</a>
     <div class="container">
         <div th:replace="/testrun/testrun_part :: table"></div>
     </div>
